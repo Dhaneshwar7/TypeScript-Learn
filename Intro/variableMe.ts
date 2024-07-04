@@ -18,11 +18,12 @@ let isLoggedIn: boolean = true;
 console.log(isLoggedIn);
 
 //any
-
-let hero;
+let hero: any;
 
 function getHero() {
-	return 'thor';
+	return 'hello man';
 }
 hero = getHero();
+hero();
+
 export {};

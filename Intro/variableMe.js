@@ -17,6 +17,7 @@ console.log(isLoggedIn);
 //any
 var hero;
 function getHero() {
-    return 'thor';
+    return 'hello man';
 }
 hero = getHero();
+hero();

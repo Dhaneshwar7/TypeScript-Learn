@@ -22,15 +22,43 @@ type User = {
 	email: string;
 	isActiver: boolean;
 };
-function createPerson(user: User):User {
-    return { name: 'me', email: 'me@', isActiver: true };
+function createPerson(user: User): User {
+	return { name: 'me', email: 'me@', isActiver: true };
 }
 createPerson({ name: 'me', email: 'me@', isActiver: true });
 
+//Example 2  -- ?  -- Readonly
 
-//Example 2
+type Admin = {
+	//without readonly its mutable
+	readonly _id: string;
+	name: string;
+	email: string;
+	isActive: boolean;
+	creditcardDetails?: number; // ? optional  ,no  error
+};
 
+let myUser: Admin = {
+	_id: 'fd3j2390',
+	name: 'jojo',
+	email: 'j@j.com',
+	isActive: true,
+};
 
+// myUser._id = '38493'; // it not mutable bcs of readonly
+console.log(myUser._id); /// its consoling same which already decalare in first place
 
+// MIXING TYPES
+
+type cardNumber = {
+	cardnumber: number;
+};
+type cardDate = {
+	cardDate: number;
+};
+type CardDetails = cardNumber &
+	cardDate & {
+		cardCvv: number;
+	};
 
 export {};
